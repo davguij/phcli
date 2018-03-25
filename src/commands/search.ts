@@ -3,6 +3,7 @@ import chalk from 'chalk';
 import { distanceInWordsToNow } from 'date-fns';
 
 import { AlgoliaSearch } from '../adaptors/algolia_search';
+import { spinner } from '../utils/spinner';
 
 export default class Search extends Command {
   static description = 'Search for products';
@@ -23,9 +24,10 @@ export default class Search extends Command {
   private _search = new AlgoliaSearch();
 
   async run() {
+    spinner.start();
     const { args } = this.parse(Search);
     const results = await this._search.search(args.terms);
-    // this.log(chalk.blue(results.data));
+    spinner.stop();
     for (const result of results) {
       this.log(chalk.cyanBright.bold('>>', result.name, '<<'));
       this.log(chalk.grey(result.tagline));
