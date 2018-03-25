@@ -12,6 +12,8 @@
     "@oclif/config": "^1.3.59",
     "@oclif/errors": "^1.0.2",
     "@oclif/plugin-help": "^1.1.6",
+    "@oclif/plugin-not-found": "^1.0.5",
+    "@oclif/plugin-update": "^1.0.3",
     "axios": "^0.18.0",
     "chalk": "^2.3.2",
     "date-fns": "^1.29.0",
@@ -56,7 +58,9 @@
     "commands": "./lib/commands",
     "bin": "phcli",
     "plugins": [
-      "@oclif/plugin-help"
+      "@oclif/plugin-help",
+      "@oclif/plugin-not-found",
+      "@oclif/plugin-update"
     ]
   },
   "repository": "davguij/phcli",

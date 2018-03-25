@@ -1,5 +1,4 @@
 import { Command } from '@oclif/command';
-import chalk from 'chalk';
 import { distanceInWordsToNow } from 'date-fns';
 
 import { AlgoliaSearch } from '../adaptors/algolia_search';
