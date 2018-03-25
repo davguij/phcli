@@ -3,8 +3,8 @@ import chalk from 'chalk';
 import { distanceInWordsToNow } from 'date-fns';
 
 import { AlgoliaSearch } from '../adaptors/algolia_search';
+import { colors } from '../utils/colors';
 import { spinner } from '../utils/spinner';
-
 export default class Search extends Command {
   static description = 'Search for products';
 
@@ -29,10 +29,10 @@ export default class Search extends Command {
     const results = await this._search.search(args.terms);
     spinner.stop();
     for (const result of results) {
-      this.log(chalk.cyanBright.bold('>>', result.name, '<<'));
-      this.log(chalk.grey(result.tagline));
+      this.log(colors.first.bold('>>', result.name, '<<'));
+      this.log(colors.second(result.tagline));
       this.log(
-        chalk.cyan(
+        colors.third(
           distanceInWordsToNow(new Date(result.created_at), {
             addSuffix: true,
           }),
@@ -42,11 +42,11 @@ export default class Search extends Command {
         )
       );
       this.log(
-        chalk.grey(result.product_links[0].store_name + ':') +
+        colors.second(result.product_links[0].store_name + ':') +
           ' ' +
-          chalk.blueBright.underline(result.product_links[0].url)
+          colors.fourth.underline(result.product_links[0].url)
       );
-      this.log(chalk.cyanBright('------------------------'));
+      this.log(colors.fifth('------------------------'));
     }
   }
 }
