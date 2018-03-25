@@ -27,7 +27,7 @@ export default class Search extends Command {
     const results = await this._search.search(args.terms);
     // this.log(chalk.blue(results.data));
     for (const result of results) {
-      this.log(chalk.cyanBright.bold('>>', result.name));
+      this.log(chalk.cyanBright.bold('>>', result.name, '<<'));
       this.log(chalk.grey(result.tagline));
       this.log(
         chalk.cyan(
