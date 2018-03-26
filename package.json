@@ -46,7 +46,7 @@
   },
   "files": [".oclif.manifest.json", "/bin", "/lib"],
   "homepage": "https://github.com/davguij/phcli",
-  "keywords": ["oclif"],
+  "keywords": ["cli", "command line", "ph", "producthunt"],
   "license": "MIT",
   "main": "lib/index.js",
   "oclif": {

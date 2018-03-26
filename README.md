@@ -24,7 +24,7 @@ $ npm install -g phcli
 $ phcli COMMAND
 running command...
 $ phcli (-v|--version|version)
-phcli/1.0.0 darwin-x64 node-v8.9.4
+phcli/0.1.0 darwin-x64 node-v8.9.4
 $ phcli --help [COMMAND]
 USAGE
   $ phcli COMMAND
@@ -34,27 +34,10 @@ USAGE
 <!-- commands -->
 # Commands
 
-* [phcli hello [FILE]](#hello-file)
 * [phcli help [COMMAND]](#help-command)
-## hello [FILE]
-
-describe the command here
-
-```
-USAGE
-  $ phcli hello [FILE]
-
-OPTIONS
-  -f, --force
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ phcli hello
-  hello world from ./src/hello.ts!
-```
-
-_See code: [src/commands/hello.ts](https://github.com/davguij/phcli/blob/v1.0.0/src/commands/hello.ts)_
-
+* [phcli search TERMS](#search-terms)
+* [phcli today](#today)
+* [phcli update [CHANNEL]](#update-channel)
 ## help [COMMAND]
 
 display help for phcli
@@ -71,4 +54,44 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v1.1.6/src/commands/help.ts)_
+
+## search TERMS
+
+Search for products
+
+```
+USAGE
+  $ phcli search TERMS
+
+ARGUMENTS
+  TERMS  You can probably imagine how it works. If you need to use multiple words, please enclose them in quotes.
+
+EXAMPLES
+  $ phcli search awesome
+  $ phcli search "super awesome products"
+```
+
+_See code: [src/commands/search.ts](https://github.com/davguij/phcli/blob/v0.1.0/src/commands/search.ts)_
+
+## today
+
+Get today's most popular
+
+```
+USAGE
+  $ phcli today
+```
+
+_See code: [src/commands/today.ts](https://github.com/davguij/phcli/blob/v0.1.0/src/commands/today.ts)_
+
+## update [CHANNEL]
+
+update the phcli CLI
+
+```
+USAGE
+  $ phcli update [CHANNEL]
+```
+
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v1.0.3/src/commands/update.ts)_
 <!-- commandsstop -->
